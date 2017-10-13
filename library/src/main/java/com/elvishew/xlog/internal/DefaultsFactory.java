@@ -41,7 +41,9 @@ import com.elvishew.xlog.printer.file.FilePrinter;
 import com.elvishew.xlog.printer.file.backup.BackupStrategy;
 import com.elvishew.xlog.printer.file.backup.FileSizeBackupStrategy;
 import com.elvishew.xlog.printer.file.naming.ChangelessFileNameGenerator;
+import com.elvishew.xlog.printer.file.naming.ChangelessFileNameGenerator2;
 import com.elvishew.xlog.printer.file.naming.FileNameGenerator;
+import com.elvishew.xlog.printer.file.naming.FileNameGenerator2;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -126,6 +128,13 @@ public class DefaultsFactory {
    */
   public static FileNameGenerator createFileNameGenerator() {
     return new ChangelessFileNameGenerator(DEFAULT_LOG_FILE_NAME);
+  }
+
+  /**
+   * Create the default file name generator for {@link FilePrinter}.
+   */
+  public static FileNameGenerator2 createFileNameGenerator2() {
+    return new ChangelessFileNameGenerator2(DEFAULT_LOG_FILE_NAME);
   }
 
   /**
